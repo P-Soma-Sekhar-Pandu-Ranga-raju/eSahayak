@@ -147,7 +147,7 @@ export const ChatContainer = () => {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 w-96 rounded-lg shadow-xl flex flex-col max-h-[600px] overflow-hidden">
+    <div className="fixed bottom-4 right-4 w-96 rounded-lg shadow-xl flex flex-col max-h-[600px] overflow-hidden bg-white z-50">
       <ChatHeader
         onClose={() => {
           setIsOpen(false);

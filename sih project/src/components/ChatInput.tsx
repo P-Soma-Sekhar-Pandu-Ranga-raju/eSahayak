@@ -26,6 +26,15 @@ export const ChatInput = ({ onSend, showSendButton }: ChatInputProps) => {
           placeholder="Type your message..."
           className="flex-1 resize-none rounded-lg border border-gray-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[44px] max-h-32"
           rows={1}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              if (message.trim()) {
+                onSend(message);
+                setMessage('');
+              }
+            }
+          }}
         />
         {(showSendButton || message.trim()) && (
           <button
