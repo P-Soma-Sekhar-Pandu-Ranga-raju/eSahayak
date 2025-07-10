@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .dashboard {
+            display: flex;
+            flex-direction: row;
+            min-height: calc(100vh - 54px);
+        }
+
+        .left-section {
+            flex: 3;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .stat-card {
+            background-color: #f3f3f3;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            flex: 1 1 calc(45% - 20px);
+            text-align: center;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .charts {
+            margin-top: 20px;
+        }
+
+        .chart-container {
+            margin-bottom: 20px;
+        }
+
+        .map-container {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background: white;
+            padding: 0;
+        }
+
+        .static-map {
+            max-width: 100%;
+            max-height: 150vh;
+            object-fit: cover;
+            display: block;
+            margin: 0;
+        }
+
+        .graph-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .uploaded-graph {
+            max-width: calc(50% - 10px);
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Admin Dashboard
+    </div>
+    <div class="dashboard">
+        <div class="left-section">
+            <div class="stats">
+                <div class="stat-card">User Demographics
+                    <br><b></b></div>
+                <div class="stat-card">No.of Users
+                    <br><b></b></div>
+                <div class="stat-card">Session details
+                    <br><b></b></div>
+                <div class="stat-card">Query types
+                    <br><b></b></div>
+            </div>
+            <div class="graph-container">
+                <img src="dvvv.png" alt="Graph 1" class="uploaded-graph">
+                <img src="dvvv2.png" alt="Graph 2" class="uploaded-graph">
+            </div>
+            <div class="charts">
+                <div class="chart-container">
+                    <canvas id="caseTypeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="stateCasesChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="map-container">
+            <img src="https://www.researchgate.net/profile/Nalin-Somani-2/publication/351355265/figure/fig1/AS:1020307947126784@1620271779494/Graphical-representation-of-the-Indian-map-with-number-of-cases-in-individual-state-Map.jpg" alt="India Map" class="static-map">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.min.js"></script>
+    <script>
+        // Pie Chart for case distribution
+        var ctxCaseType = document.getElementById('caseTypeChart').getContext('2d');
+        new Chart(ctxCaseType, {
+            type: 'pie',
+            data: {
+                labels: ['Land Disputes', 'Harassment', 'Discrimination', 'Other'],
+                datasets: [{
+                    data: [450, 230, 120, 90],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)'
+                    ]
+                }]
+            }
+        });
+
+        // Bar Chart for case counts by state
+        var ctxStateCases = document.getElementById('stateCasesChart').getContext('2d');
+        new Chart(ctxStateCases, {
+            type: 'bar',
+            data: {
+                labels: ['Andhra Pradesh', 'Karnataka', 'Maharashtra', 'Tamil Nadu'],
+                datasets: [{
+                    label: 'Total Cases',
+                    data: [120, 100, 150, 110],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                }]
+            }
+        });
+    </script>
+</body>
+</html>

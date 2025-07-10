@@ -1,0 +1,307 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --india-saffron: #FF9933;
+    --india-green: #138808;
+    --india-blue: #000080;
+    --white: #ffffff;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Top Bar */
+  .top-bar {
+    background-color: var(--india-saffron);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 0;
+    color: var(--white);
+  }
+  
+  .top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .top-bar .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  
+  .top-bar .divider {
+    color: var(--white);
+  }
+  
+  .top-bar .right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .skip-link {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .accessibility-tools {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .tool-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+  }
+  
+  .lang-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--white);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 4px;
+  }
+  
+  /* Header */
+  header {
+    background: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .emblem {
+    height: 80px;
+  }
+  
+  .title h1 {
+    font-size: 24px;
+    color: var(--india-blue);
+    margin-bottom: 5px;
+  }
+  
+  .title h2 {
+    font-size: 28px;
+    color: var(--india-blue);
+    font-weight: bold;
+  }
+  
+  .right-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .g20-logo, .azadi-logo {
+    height: 70px;
+  }
+  
+  /* Navigation */
+  nav {
+    background: linear-gradient(to right, var(--india-saffron), var(--india-green));
+    position: relative;
+  }
+  
+  nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .nav-menu li {
+    position: relative;
+  }
+  
+  .nav-menu li a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    font-size: 15px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-menu li.active a,
+  .nav-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Banner Slider */
+  .banner-slider {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-bottom: 4px solid var(--india-green);
+  }
+  
+  .banner-slide {
+    position: relative;
+    height: 100%;
+  }
+  
+  .banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .banner-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: var(--white);
+  }
+  
+  .mann-ki-baat h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  .mkb-details {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .mkb-logo {
+    height: 100px;
+  }
+  
+  .mkb-info {
+    font-size: 18px;
+  }
+  
+  .click-here {
+    display: inline-block;
+    background: var(--india-green);
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: background-color 0.3s;
+  }
+  
+  .click-here:hover {
+    background: #0a6e04;
+  }
+  
+  .toll-free {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .phone-lines {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  
+  /* Latest News */
+  .news-section {
+    background: var(--white);
+    padding: 20px 0;
+    margin-top: 20px;
+    border-top: 3px solid var(--india-saffron);
+  }
+  
+  .news-title {
+    color: var(--india-blue);
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 4px solid var(--india-saffron);
+  }
+  
+  .news-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border-left: 4px solid var(--india-green);
+  }
+  
+  .new-badge {
+    background: var(--india-saffron);
+    color: var(--white);
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .top-bar .container,
+    header .container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .nav-menu {
+      flex-direction: column;
+    }
+  
+    .nav-menu li a {
+      padding: 10px;
+    }
+  
+    .mkb-details {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .right-logos {
+      margin-top: 15px;
+    }
+  }
